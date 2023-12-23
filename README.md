@@ -43,7 +43,7 @@ Events can be called from client & server-side.
 
 ### Example Usage
 
-Utilizing exports
+Utilizing Exports
 ```lua
 -- Start an objective
 exports['sd-objective']:ShowObjectiveUI('Title', 'Description', 4)
