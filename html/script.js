@@ -23,7 +23,7 @@ function applyConfigurations() {
     switch (config.theme) {
         case 'light':
             container.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
-            title.style.color = '#000';
+            title.style.color = '#004d99';
             description.style.color = '#333';
             progressBar.style.background = 'linear-gradient(to right, #00c853, #b2ff59)';
             break;
