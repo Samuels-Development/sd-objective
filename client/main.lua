@@ -36,6 +36,16 @@ local function UpdateProgress()
     end
 end
 
+-- Function to update the description
+local function UpdateDescription(newDescription)
+    if isUIOpen then
+        SendNUIMessage({
+            type = 'descriptionUpdate',
+            description = newDescription
+        })
+    end
+end
+
 -- Function to hide the UI
 local function HideObjectiveUI()
     SendNUIMessage({
@@ -48,6 +58,7 @@ end
 exports('ShowObjectiveUI', ShowObjectiveUI)
 exports('UpdateProgress', UpdateProgress)
 exports('HideObjectiveUI', HideObjectiveUI)
+exports('UpdateDescription', UpdateDescription)
 
 -- Events that can be triggered from the server
 RegisterNetEvent('sd-objective:client:showUI', function(title, description, steps)
@@ -56,6 +67,10 @@ end)
 
 RegisterNetEvent('sd-objective:client:updateProgress', function()
     UpdateProgress()
+end)
+
+RegisterNetEvent('sd-objective:client:updateDescription', function(newDescription)
+    UpdateDescription(newDescription)
 end)
 
 RegisterNetEvent('sd-objective:client:hideUI', function()

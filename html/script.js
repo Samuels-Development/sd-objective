@@ -71,6 +71,26 @@ function setPosition(position) {
             container.style.left = '50%';
             container.style.transform = 'translate(-50%, -50%)';
             break;
+        case 'middle-right':
+            container.style.top = '50%';
+            container.style.right = '0';
+            container.style.transform = 'translateY(-50%)';
+            break;
+        case 'middle-left':
+            container.style.top = '50%';
+            container.style.left = '0';
+            container.style.transform = 'translateY(-50%)';
+            break;
+        case 'middle-top':
+            container.style.top = '0';
+            container.style.left = '50%';
+            container.style.transform = 'translateX(-50%)';
+            break;
+        case 'bottom-middle':
+            container.style.bottom = '0';
+            container.style.left = '50%';
+            container.style.transform = 'translateX(-50%)';
+            break;
         default:
             container.style.top = '0';
             container.style.left = '0';
@@ -117,5 +137,8 @@ window.addEventListener('message', function(event) {
         if (currentProgress === totalSteps) {
             setTimeout(hideUI, 2000);
         }
+    }
+    if (data.type === 'descriptionUpdate') {
+        document.getElementById('objective-description').innerText = data.description;
     }
 });

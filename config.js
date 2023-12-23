@@ -1,6 +1,6 @@
 const config = {    
     // UI Position Settings
-    position: 'top-right', // Options: 'top-left', 'top-right', 'bottom-left', 'bottom-right', 'center',
+    position: 'top-right', // All Options: 'top-left', 'top-right', 'bottom-left', 'bottom-right', 'center', 'middle-right', 'middle-left', 'middle-top', 'bottom-middle'
 
     // UI Appearance Settings
     theme: 'dark', // Options: 'light', 'dark', or 'custom'
