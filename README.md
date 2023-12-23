@@ -28,7 +28,9 @@ Exports are exclusively available on the client and can't be called from server-
 - `ShowObjectiveUI(title, description, steps)`
    - `title`: The title of the objective (e.g., "Retrieve the Artifact").
    - `description`: A brief description of the objective (e.g., "Go to the ancient ruins and retrieve the artifact").
-   - `steps`: Total number of steps required to complete the objective (e.g., if an objective has 4 steps, use `4`).
+   - `steps`: Total number of steps required to complete the objective (e.g., if an objective has 4 steps, use `4
+
+- `UpdateDescription(description)`: Call this function to change the description of the objective.
 
 - `UpdateProgress()`: Call this function to advance the objective's progress by one step.
 
@@ -40,6 +42,7 @@ Events can be called from client & server-side.
 - `sd-objective:client:showUI` (eg. ShowObjectiveUI)
 - `sd-objective:client:updateProgress` (eg. UpdateProgress)
 - `sd-objective:client:hideUI` (eg. HideObjectiveUI)
+- `sd-objective:client:updateDescription` (eg. UpdateDescription)
 
 ### Example Usage
 
@@ -50,6 +53,9 @@ exports['sd-objective']:ShowObjectiveUI('Title', 'Description', 4)
 
 -- Update progress
 exports['sd-objective']:UpdateProgress()
+
+-- Update Description
+exports['sd-objective']:UpdateDescription(description)
 
 -- Hide the UI
 exports['sd-objective']:HideObjectiveUI()
@@ -62,6 +68,9 @@ TriggerClientEvent('sd-objective:client:showUI', source, 'Title', 'Description',
 
 -- Update progress
 TriggerClientEvent('sd-objective:client:updateProgress', source)
+
+-- Update Description
+TriggerClientEvent('sd-objective:client:updateDescription', source, 'Description')
 
 -- Hide the UI
 TriggerClientEvent('sd-objective:client:hideUI', source)
@@ -85,7 +94,7 @@ RegisterNetEvent('sd-oxyrun:client:getBox', function()
                     ShowNotification(''.. currentBoxes .. '/' .. amountOfBox .. '')
 
                     if currentBoxes == amountOfBox then
-                        -- do something cool
+                        -- either let the objective fade out (if the task has fully ended) or change description.
                     end
                 end
             end
@@ -94,7 +103,10 @@ RegisterNetEvent('sd-oxyrun:client:getBox', function()
 end)
 
 -- Call this when starting the box collection task
-exports['sd-objective']:ShowObjectiveUI('Box Collection', 'Collect the boxes', amountOfBox)
+exports['sd-objective']:ShowObjectiveUI('Box Collection', 'Get a car to collect boxes', amountOfBox + 3)
+
+-- Call this when you've gotten a car and now want to change the objective's description to collect boxes.
+exports['sd-objective']:UpdateDescription('Go collect boxes from the Supplier')
 ```
 
 
