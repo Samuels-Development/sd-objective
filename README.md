@@ -30,11 +30,11 @@ Exports are exclusively available on the client and can't be called from server-
    - `description`: A brief description of the objective (e.g., "Go to the ancient ruins and retrieve the artifact").
    - `steps`: Total number of steps required to complete the objective (e.g., if an objective has 4 steps, use `4
 
-- `UpdateDescription(description)`: Call this function to change the description of the objective.
-
 - `UpdateProgress()`: Call this function to advance the objective's progress by one step.
 
 - `HideObjectiveUI()`: Immediately hide the UI, regardless of the objective's progress.
+
+- `UpdateDescription(description)`: Call this function to change the description of the objective.
 
 ### Event Handlers
 Events can be called from client & server-side.
