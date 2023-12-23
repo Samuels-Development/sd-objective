@@ -28,7 +28,7 @@ Exports are exclusively available on the client and can't be called from server-
 - `ShowObjectiveUI(title, description, steps)`
    - `title`: The title of the objective (e.g., "Retrieve the Artifact").
    - `description`: A brief description of the objective (e.g., "Go to the ancient ruins and retrieve the artifact").
-   - `steps`: Total number of steps required to complete the objective (e.g., if an objective has 4 steps, use `4
+   - `steps`: Total number of steps required to complete the objective (e.g., if an objective has 4 steps, use `4`
 
 - `UpdateProgress()`: Call this function to advance the objective's progress by one step.
 
@@ -102,8 +102,10 @@ RegisterNetEvent('sd-oxyrun:client:getBox', function()
     end
 end)
 
+
+
 -- Call this when starting the box collection task
-exports['sd-objective']:ShowObjectiveUI('Box Collection', 'Get a car to collect boxes', amountOfBox + 3)
+exports['sd-objective']:ShowObjectiveUI('Box Collection', 'Get a car to collect boxes', amountOfBox * 2 + 3) (Example calculation to determine the amount of steps the oxy run has)
 
 -- Call this when you've gotten a car and now want to change the objective's description to collect boxes.
 exports['sd-objective']:UpdateDescription('Go collect boxes from the Supplier')
