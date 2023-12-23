@@ -61,12 +61,3 @@ end)
 RegisterNetEvent('sd-objective:client:hideUI', function()
     HideObjectiveUI()
 end)
-
--- Example usage with commands
-RegisterCommand('testUI', function()
-    ShowObjectiveUI('Gruppe 6 Contractor', 'Head to the location requesting a cash pickup.', 7)
-end)
-
-RegisterCommand('updateProgress', function()
-    UpdateProgress()
-end)
