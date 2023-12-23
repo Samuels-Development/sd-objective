@@ -23,6 +23,7 @@ https://www.youtube.com/watch?v=B0CuSTtjuiU&feature=youtu.be
 ## Usage
 
 ### Exports
+Exports are exclusively available on the client and can't be called from server-side files.
 
 - `ShowObjectiveUI(title, description, steps)`
    - `title`: The title of the objective (e.g., "Retrieve the Artifact").
@@ -34,6 +35,7 @@ https://www.youtube.com/watch?v=B0CuSTtjuiU&feature=youtu.be
 - `HideObjectiveUI()`: Immediately hide the UI, regardless of the objective's progress.
 
 ### Event Handlers
+Events can be called from client & server-side.
 
 - `sd-objective:client:showUI` (eg. ShowObjectiveUI)
 - `sd-objective:client:updateProgress` (eg. UpdateProgress)
@@ -41,6 +43,7 @@ https://www.youtube.com/watch?v=B0CuSTtjuiU&feature=youtu.be
 
 ### Example Usage
 
+Utilizing exports
 ```lua
 -- Start an objective
 exports['sd-objective']:ShowObjectiveUI('Title', 'Description', 4)
@@ -50,6 +53,18 @@ exports['sd-objective']:UpdateProgress()
 
 -- Hide the UI
 exports['sd-objective']:HideObjectiveUI()
+```
+
+Utilizing Events
+```lua
+-- Start an objective
+TriggerClientEvent('sd-objective:client:showUI', source, 'Title', 'Description', 4)
+
+-- Update progress
+TriggerClientEvent('sd-objective:client:updateProgress', source)
+
+-- Hide the UI
+TriggerClientEvent('sd-objective:client:hideUI', source)
 ```
 
 ### Contextual Example
