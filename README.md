@@ -12,7 +12,7 @@ For support inquires please create a post in the support-forum channel on discor
 
 
 ### Video Preview
-https://www.youtube.com/watch?v=B0CuSTtjuiU&feature=youtu.be
+[https://www.youtube.com/watch?v=B0CuSTtjuiU&feature=youtu.be](https://youtu.be/xgUVQdMFztQ)
 
 ## Installation
 
